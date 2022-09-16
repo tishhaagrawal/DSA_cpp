@@ -19,7 +19,7 @@ vector<int> input(vector<int> vec){
   return vec;
 }
 
-//print vector
+//printing an array
 void printVec(vector <int> vec){
   cout << "array: ";
   for(int i=0; i<vec.size(); i++){
@@ -42,6 +42,7 @@ vector<int> sumOfArrays(vector<int> v1, vector<int> v2){
     i--; j--;
   }
 
+  //when size of first array > size of second array
   while(i>=0){
     sum = v1[i] + carry;
     carry = sum/10;
@@ -49,7 +50,8 @@ vector<int> sumOfArrays(vector<int> v1, vector<int> v2){
     ans.insert(ans.begin(), sum);
     i--;
   }
-
+  
+  // when size of second array > size of first array
   while(j>=0){
     sum = v2[j] + carry;
     carry = sum/10;
@@ -58,6 +60,8 @@ vector<int> sumOfArrays(vector<int> v1, vector<int> v2){
     ans.insert(ans.begin(), sum);
     j--;
   }
+  
+  // when carry is left at the end
   while(carry != 0){
     ans.insert(ans.begin(), carry);
     carry = carry/10;
